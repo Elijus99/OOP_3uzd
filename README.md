@@ -1,19 +1,6 @@
-# Duomenų apdorojimas (2 užduotis)
+# Naujų tipų kūrimas ir jų naudojimas (3 užduotis)
 
-## Užduoties aprašymas
-- Parašykite programą, kuri nuskaito šiuos studentų duomenis:
-- vardą ir pavardę
-- n atliktų namų darbų (nd) rezultatus (10-balėje sistemoje), o taip pat egzamino (egz) rezultatą.
-- Tuomet iš šių duomenų, suskaičiuoja galutinį balą (galutinis):  
-`galutinis = 0.4 * vidurkis/mediana + 0.6 * egzaminas`
- - Duomenys pateikiami į ekraną tokiu ar panašiu pavidalu (kur galutinis apskaičiuotas balas pateikiamas dviejų skaičių po kablelio tikslumu):
-``` 
-Pavardė     Vardas       Galutinis (Vid.) / Galutinis (Med.)
------------------------------------------------------------
-Arvydas     Sabonis      x.xx               x.xx
-Rimas       Kurtinaitis  y.yy               y.yy
-...
-```
+Pratęskite (tuo pačiu ir patobulinkite) 2-osios užduoties Jūsų turimą programos realizaciją (versiją v1.0) taip, kad vietoje Jūsų sukurtos Studentas (StudentoInfo) ar dar kitaip pavadintos Studentų structūros jos pagrindu sukurkite class'ę, vadovaujantis per teorijos paskaitas nurodomomis "geromis praktikomis".
 
 ## Įdiegimas (Unix kompiuteryje) naudojant `Clang` kompiliatorių 
 

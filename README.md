@@ -130,7 +130,57 @@ Naudojamų įrašų kiekis    raskMinkstus()                iterpKietus()       
 100000                    54.5750s                     194.5236s                 0.0454s
 ```
 
+## Struct ir class palyginimas [v1.1]
+
+```
+Struct
+Konteineris     Naudojamų įrašų kiekis      Nuskaitymas+     Rusiavimas          Rikiavimas      Isvedimas       Viso
+                                   StudentList.txt generavimas    
+Vector          10000                       0.2542s          0.0030s             0.0064s         0.0694s         0.3330s
+Vector          100000                      2.3035s          0.0354s             0.0820s         0.5603s         2.9811s
+
+Class
+Konteineris     Naudojamų įrašų kiekis      Nuskaitymas+     Rusiavimas          Rikiavimas      Isvedimas       Viso
+                                   StudentList.txt generavimas    
+Vector          10000                       0.2522s          0.0028s             0.0097s         0.0687s         0.3334s
+Vector          100000                      2.4438s          0.0292s             0.1190s         0.5474s         3.1393s
+```
+
+## Kompiliatoriaus optimizavimo flag'u palyginimas [v1.1]
+
+```
+Flag 01
+Konteineris     Naudojamų įrašų kiekis      Nuskaitymas+     Rusiavimas          Rikiavimas      Isvedimas       Viso
+                                  StudentList.txt generavimas    
+Vector          10000                       0.2915s          0.0030s             0.0114s         0.0712s         0.3771s
+Vector          100000                      2.5094s          0.0296s             0.1300s         0.5583s         3.2273s
+
+Flag 02
+Konteineris     Naudojamų įrašų kiekis      Nuskaitymas+     Rusiavimas          Rikiavimas      Isvedimas       Viso
+                                  StudentList.txt generavimas    
+Vector          10000                       0.2522s          0.0028s             0.0097s         0.0687s         0.3334s
+Vector          100000                      2.4438s          0.0292s             0.1190s         0.5474s         3.1393s
+
+Flag 03
+Konteineris     Naudojamų įrašų kiekis      Nuskaitymas+     Rusiavimas          Rikiavimas      Isvedimas       Viso
+                                  StudentList.txt generavimas    
+Vector          10000                       0.2679s          0.0032s             0.0095s         0.0710s         0.3516s
+Vector          100000                      2.5070s          0.0334s             0.1157s         0.5553s         3.2114s
+```
+
 ## Versijų istorija (changelog)
+
+### [v1.1](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v1.1) - (2019-04-10)
+
+**Koreguota**
+
+- `struct stud` pakeistas į `class stud`.
+- Dalis funkcijų integruotos į `class stud`.
+- Papildytas **README** failas.
+
+**Pridėta**
+
+- Sukurti failai student.cpp ir student.h, kuriuose aprašoma `class stud` ir su jos nariais susijusos funkcijos.
 
 ### [Papildoma uzduotis](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v0.4p) - (2019-03-24)
 

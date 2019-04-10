@@ -1,5 +1,6 @@
 #include "functions.h"
 #include "libraries.h"
+#include "student.h"
 #include <algorithm>
 
 int main()

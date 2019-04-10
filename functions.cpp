@@ -1,5 +1,6 @@
 #include "functions.h"
 #include "libraries.h"
+#include "student.h"
 #include <limits>
 #include <random>
 #include <algorithm>
@@ -87,131 +88,12 @@ void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize, std:
 	int SIZE = ls.size();
 	for (int i = SIZE; i < (N + SIZE); i++)
 	{
-		ls.push_back(stud());
-		cout << "Iveskite " << i + 1 << "-o studento varda" << endl;
-		cin >> ls[i].vard;
-		if (VSize < ls[i].vard.size()) {
-			VSize = ls[i].vard.size();
-		}
-		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-		cout << "Iveskite " << i + 1 << "-o studento pavarde" << endl;
-		cin >> ls[i].pav;
-		if (PSize < ls[i].pav.size()) {
-			PSize = ls[i].pav.size();
-		}
-		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-		choice = 'x';
-		do {
-			cout << "Ar norite pazymius bei egzamino rezultata ivesti, ar juos sugeneruoti automatiskai? (Iveskite 'i' arba 'g')" << endl;
-			cin >> choice;
-			if (choice == "i" || choice == "I" || choice == "G" || choice == "g") {
-				break;
-			}
-			else {
-				cout << "That input is invalid!" << endl;
-				cin.clear();
-				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			}
-		} while (choice != "i" || choice != "I" || choice != "G" || choice != "g");
-
-		ls[i].n = 0;
-		j = 0;
-		if (choice == "i" || choice == "I") {
-			while (true) {
-				try {
-					do {
-						cout << "Iveskite " << j + 1 << "-o namu darbo rezultata (Iveskite -1, kai noresite uzbaigti rezultatu vedima)" << endl;
-						cin >> temp;
-						if (temp == -1) {
-							throw - 1;
-						}
-						if (temp > -1 && temp < 11 && cin.fail() == false) {
-							(ls[i].nd).push_back(temp);
-							ls[i].n++;
-							j++;
-						}
-						if (!(valid_input = cin.good())) {
-							cout << "That input is invalid!" << endl;
-							cin.clear();
-							cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-						}
-						else if (temp > 10 || temp < -1) {
-							cout << "That input is invalid!" << endl;
-							cin.clear();
-							cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-							valid_input = false;
-						}
-					} while (!valid_input);
-					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				}
-				catch (...) {
-					cout << "Homework input operation has been stopped!" << endl;
-					break;
-				}
-			}
-
-			do {
-				cout << "Iveskite studento egzamino rezultata" << endl;
-				cin >> egzaminas;
-				if (!(valid_input = cin.good())) {
-					cout << "That input is invalid!" << endl;
-					cin.clear();
-					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				}
-			} while (!valid_input);
-			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		}
-		else {
-			cout << "Kiek pazymiu norite sugeneruoti?" << endl;
-			cin >> ls[i].n;
-			cout << "Sugeneruoti pazymiai: ";
-			for (int j = 0; j < ls[i].n; j++)
-			{
-				(ls[i].nd).push_back(RandomNumber());
-				cout << ls[i].nd[j] << " ";
-			}
-			egzaminas = RandomNumber();
-			cout << endl;
-			cout << "Egzamino rezultatas: " << egzaminas;
-			cout << endl;
-		}
-		ls[i].galutinis = galutinis(egzaminas, GType, ls[i].n, ls[i].nd);
-
-		cout << endl;
+		stud x(cin);
+		x.setGal(galBalas(x.egzaminas(), GType, x.nd()));
+		if (VSize < x.vardas().size()) { VSize = x.vardas().size(); }
+		if (PSize < x.pavarde().size()) { PSize = x.pavarde().size(); }
+		ls.push_back(x);
 	}
-}
-
-double galutinis(int egzaminas, string GType, int n, std::vector<int> nd)
-{
-	double vidurkis = 0;
-	for (int j = 0; j < n; j++)
-	{
-		vidurkis += nd[j];
-	}
-	vidurkis = division(vidurkis, n);
-	std::sort(nd.begin(), nd.end());
-	double mediana;
-	if (n > 0) {
-		if (n % 2 == 1) {
-			mediana = nd[n / 2];
-		}
-		else {
-			mediana = (double)(nd[n / 2 - 1] + nd[n / 2]) / 2;
-		}
-	}
-	else {
-		mediana = 0;
-	}
-	double galutinis;
-	if (GType == "v" || GType == "V") {
-		galutinis = 0.4 * vidurkis + 0.6 * egzaminas;
-	}
-	else if (GType == "m" || GType == "M") {
-		galutinis = 0.4 * mediana + 0.6 * egzaminas;
-	}
-	return galutinis;
 }
 
 void isvedimas(std::vector<stud> ls, std::vector<stud> vargs, int VSize, int PSize, string GType)
@@ -239,21 +121,17 @@ void isvedimas(std::vector<stud> ls, std::vector<stud> vargs, int VSize, int PSi
 	cout << endl;
 	for (int i = 0; i < ls.size(); i++)
 	{
-		cout << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
+		cout << std::left << setw(VSize + 6) << ls[i].vardas()<< setw(PSize + 7) << ls[i].pavarde() << std::fixed << setprecision(2) << ls[i].galutinis() << endl;
 	}
 	for (int i = 0; i < vargs.size(); i++)
 	{
-		cout << std::left << setw(VSize + 6) << vargs[i].vard << setw(PSize + 7) << vargs[i].pav << std::fixed << setprecision(2) << vargs[i].galutinis << endl;
+		cout << std::left << setw(VSize + 6) << vargs[i].vardas() << setw(PSize + 7) << vargs[i].pavarde() << std::fixed << setprecision(2) << vargs[i].galutinis() << endl;
 	}
 }
 bool exist(string fileName)
 {
 	std::ifstream infile(fileName);
 	return infile.good();
-};
-bool compareAlphabet(const stud& a, const stud& b)
-{
-	return a.vard < b.vard;
 };
 double division(int a, int b)
 {
@@ -272,43 +150,47 @@ int RandomNumber()
 
 void generate(int n, string OutputFileName, string GType, std::vector<stud> &ls)
 {
-	int egzaminas;
+	double egzaminas;
 	stud student;
 	std::ofstream out(OutputFileName);
 	if (GType == "V" || GType == "v") {
-		out << "Vardas          " << "Pavarde          " << "ND1   " << "ND2   " << "ND3   " << "ND4   " << "ND5   " << "Galutinis (Vid.)" << endl;
+		out << "Vardas          " << "Pavarde          " << "ND1   " << "ND2   " << "ND3   " << "ND4   " << "ND5   " << "Egzaminas   " << "Galutinis (Vid.)" << endl;
 	}
 	else {
-		out << "Vardas          " << "Pavarde          " << "ND1   " << "ND2   " << "ND3   " << "ND4   " << "ND5   " << "Galutinis (Med.)" << endl;
+		out << "Vardas          " << "Pavarde          " << "ND1   " << "ND2   " << "ND3   " << "ND4   " << "ND5   " << "Egzaminas   " << "Galutinis (Med.)" << endl;
 	}
 	out << endl;
 	for (int i = 0; i < n; i++)
 	{
-		student.vard = "Vardas" + std::to_string(i + 1);
-		student.pav = "Pavarde" + std::to_string(i + 1);
+		student.setVardas("Vardas" + std::to_string(i + 1));
+		student.setPav("Pavarde" + std::to_string(i + 1));
+		vector<int> nd;
+		nd.clear();
 		for (int j = 0; j < 5; j++)
 		{
-			(student.nd).push_back(RandomNumber());
+			nd.push_back(RandomNumber());
 		}
+		student.setNd(nd);
 		egzaminas = RandomNumber();
-		student.galutinis = galutinis(egzaminas, GType, 5, student.nd);
+		student.setEgz(egzaminas);
+		student.setGal(galBalas(student.egzaminas(), GType, student.nd()));
 		ls.push_back(student);
-		out << std::left << setw(16) << student.vard << std::left << setw(17) << student.pav << std::left << setw(6) << student.nd[0] << std::left << setw(6) << student.nd[1] << std::left << setw(6) << student.nd[2] << std::left << setw(6) << student.nd[3] << std::left << setw(6) << student.nd[4] << std::fixed << setprecision(2) << student.galutinis << endl;
-		(student.nd).clear();
+		out << std::left << setw(16) << student.vardas() << std::left << setw(17) << student.pavarde() << std::left << setw(6) << nd[0] << std::left << setw(6) << nd[1] << std::left << setw(6) << nd[2] << std::left << setw(6) << nd[3] << std::left << setw(6) << nd[4] << std::left << setw(12) << std::defaultfloat << egzaminas << std::fixed << setprecision(2) << student.galutinis() << endl;
+		student.clearNd();
 	}
 }
 void SortToGroups(std::vector<stud> &ls, std::vector<stud> &vargs)
 {
 	for (int i = 0; i < ls.size(); i++)
 	{
-		if (ls[i].galutinis < 5.0) {
+		if (ls[i].galutinis() < 5.0) {
 			vargs.push_back(ls[i]);
 		}
 	}
 	ls.erase(std::remove_if(
 		ls.begin(), ls.end(),
 		[](stud x) {
-		return x.galutinis < 5.0;
+		return x.galutinis() < 5.0;
 	}), ls.end());
 }
 void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<stud> &ls, string GType)
@@ -316,6 +198,7 @@ void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<stud> &
 	if (exist(fileName)) {
 		std::ifstream in(fileName);
 		in.ignore(10000, '\n');
+		stud X;
 		string vard, pav;
 		std::vector<int> nd;
 		double egzaminas, gal;
@@ -328,6 +211,8 @@ void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<stud> &
 			if (PSize < pav.size()) {
 				PSize = pav.size();
 			}
+			X.setVardas(vard);
+			X.setPav(pav);
 			nd.clear();
 			for (int i = 0; i < n; i++)
 			{
@@ -335,8 +220,10 @@ void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<stud> &
 				nd.push_back(temp);
 			}
 			in >> egzaminas;
-			gal = galutinis(egzaminas, GType, n, nd);
-			ls.push_back({ vard, pav, n, nd, gal });
+			X.setNd(nd);
+			X.setEgz(egzaminas);
+			X.setGal(galBalas(egzaminas, GType, nd));
+			ls.push_back(X);
 		}
 		cout << "---Duomenys nuskaityti!---" << endl;
 	}
@@ -379,10 +266,10 @@ void OutputToFiles(std::vector<stud> &ls,std::vector<stud> vargs, string GType, 
 	outToV << endl;
 	for (int i = 0; i < vargs.size(); i++)
 	{
-		outToV << std::left << setw(VSize + 6) << vargs[i].vard << setw(PSize + 7) << vargs[i].pav << std::fixed << setprecision(2) << vargs[i].galutinis << endl;
+		outToV << std::left << setw(VSize + 6) << vargs[i].vardas() << setw(PSize + 7) << vargs[i].pavarde() << std::fixed << setprecision(2) << vargs[i].galutinis() << endl;
 	}
 	for (int i = 0; i < ls.size(); i++)
 	{
-		outToK << std::left << setw(VSize + 6) << ls[i].vard << setw(PSize + 7) << ls[i].pav << std::fixed << setprecision(2) << ls[i].galutinis << endl;
+		outToK << std::left << setw(VSize + 6) << ls[i].vardas() << setw(PSize + 7) << ls[i].pavarde() << std::fixed << setprecision(2) << ls[i].galutinis() << endl;
 	}
 }

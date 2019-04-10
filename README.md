@@ -4,8 +4,8 @@ Pratęskite (tuo pačiu ir patobulinkite) 2-osios užduoties Jūsų turimą prog
 
 ## Įdiegimas (Unix kompiuteryje) naudojant `Clang` kompiliatorių 
 
-- `git clone https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas.git`
-- `cd OPP_2uzd_DuomenuApdorojimas` (v0.5.1 ir v1.0.1 reikia nueiti i atitinkama folderi naudojant `cd ...`, pvz. v1.0.1 vector 2 strategija - `cd OPP_2uzd_DuomenuApdorojimas/'v1.0.1 vector'/2strat`)
+- `git clone https://github.com/Elijus99/OPP_3uzd.git`
+- `cd OPP_3uzd`
 - `make`
 - `make test`
 

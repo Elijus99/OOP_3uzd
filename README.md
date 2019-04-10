@@ -170,7 +170,7 @@ Vector          100000                      2.5070s          0.0334s            
 
 ## Versijų istorija (changelog)
 
-### [v1.1](https://github.com/Elijus99/OPP_2uzd_DuomenuApdorojimas/releases/tag/v1.1) - (2019-04-10)
+### [v1.1](https://github.com/Elijus99/OPP_3uzd/releases/tag/v1.1) - (2019-04-10)
 
 **Koreguota**
 

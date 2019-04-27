@@ -3,6 +3,21 @@
 #include "functions.h"
 #include <algorithm>
 
+stud::stud(std::istream& in) {
+	stud temp = readStudent(in);
+	vard = temp.vardas();
+	pav = temp.pavarde();
+	nd_ = temp.nd();
+	egzaminas_ = temp.egzaminas();
+};
+
+stud::stud(const stud &x2) {
+	vard = x2.vard;
+	pav = x2.pav;
+	nd_ = x2.nd_;
+	egzaminas_ = x2.egzaminas_;
+	galutinis_ = x2.galutinis_;
+};
 
 vector<int> readNd(std::istream& in) 
 {
@@ -47,16 +62,14 @@ vector<int> readNd(std::istream& in)
 stud stud::readStudent(std::istream& in)
 {
 	stud Studentas;
-	string x;
 	cout << "Iveskite studento varda" << endl;
-	in >> x;
-	Studentas.setVardas(x);
+	in >> Studentas.vard;
+	in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	cout << "Iveskite studento pavarde" << endl;
-	in >> x;
-	Studentas.setPav(x);
+	in >> Studentas.pav;
+	in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	string choice;
 	bool valid_input = false;
-	double egzaminas;
 	do {
 		cout << "Ar norite pazymius bei egzamino rezultata ivesti, ar juos sugeneruoti automatiskai? (Iveskite 'i' arba 'g')" << endl;
 		in >> choice;
@@ -70,15 +83,20 @@ stud stud::readStudent(std::istream& in)
 		}
 	} while (choice != "i" || choice != "I" || choice != "G" || choice != "g");
 	if (choice == "i" || choice == "I") {
-		Studentas.setNd(readNd(cin));
+		Studentas.nd_ = readNd(cin);
 		do {
 			cout << "Iveskite studento egzamino rezultata" << endl;
-			in >> egzaminas;
-			Studentas.setEgz(egzaminas);
+			in >> Studentas.egzaminas_;
 			if (!(valid_input = cin.good())) {
 				cout << "That input is invalid!" << endl;
 				in.clear();
 				in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
+			else if (Studentas.egzaminas_ > 10 || Studentas.egzaminas_ < 0) {
+				cout << "That input is invalid!" << endl;
+				cin.clear();
+				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				valid_input = false;
 			}
 		} while (!valid_input);
 		in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -95,32 +113,45 @@ stud stud::readStudent(std::istream& in)
 			nd.push_back(RandomNumber());
 			cout << nd[j] << " ";
 		}
-		egzaminas = RandomNumber();
-		Studentas.setNd(nd);
-		Studentas.setEgz(egzaminas);
+		Studentas.nd_ = nd;
+		Studentas.egzaminas_ = RandomNumber();
 		cout << endl;
-		cout << "Egzamino rezultatas: " << egzaminas;
+		cout << "Egzamino rezultatas: " << Studentas.egzaminas_;
 		cout << endl;
 	}
 	return Studentas;
 }
 
-double galBalas(double egzaminas, string GType, std::vector<int> nd)
+void stud::printInfo()
+{
+	cout << endl;
+	cout << vard << " " << pav << endl;
+	cout << "Namu darbu rezultatai: ";
+	for (int i = 0; i < nd_.size(); i++) {
+		cout << nd_[i] << " ";
+	}
+	cout << endl;
+	cout << "Egzamino rezultatas: " << std::defaultfloat << egzaminas_ << endl;
+	cout << "Galutinis balas: " << std::fixed << setprecision(2) << galutinis_ << endl;
+	cout << endl;
+}
+
+double stud::galBalas(string GType)
 {
 	double vidurkis = 0;
-	for (int j = 0; j < nd.size(); j++)
+	for (int j = 0; j < nd_.size(); j++)
 	{
-		vidurkis += nd[j];
+		vidurkis += nd_[j];
 	}
-	vidurkis = division(vidurkis, nd.size());
-	std::sort(nd.begin(), nd.end());
+	vidurkis = division(vidurkis, nd_.size());
+	std::sort(nd_.begin(), nd_.end());
 	double mediana;
-	if (nd.size() > 0) {
-		if (nd.size() % 2 == 1) {
-			mediana = nd[nd.size() / 2];
+	if (nd_.size() > 0) {
+		if (nd_.size() % 2 == 1) {
+			mediana = nd_[nd_.size() / 2];
 		}
 		else {
-			mediana = (double)(nd[nd.size() / 2 - 1] + nd[nd.size() / 2]) / 2;
+			mediana = (double)(nd_[nd_.size() / 2 - 1] + nd_[nd_.size() / 2]) / 2;
 		}
 	}
 	else {
@@ -128,10 +159,10 @@ double galBalas(double egzaminas, string GType, std::vector<int> nd)
 	}
 	double galutinis;
 	if (GType == "v" || GType == "V") {
-		galutinis = 0.4 * vidurkis + 0.6 * egzaminas;
+		galutinis = 0.4 * vidurkis + 0.6 * egzaminas_;
 	}
 	else if (GType == "m" || GType == "M") {
-		galutinis = 0.4 * mediana + 0.6 * egzaminas;
+		galutinis = 0.4 * mediana + 0.6 * egzaminas_;
 	}
 	return galutinis;
 }

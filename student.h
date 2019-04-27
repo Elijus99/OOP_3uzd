@@ -11,16 +11,19 @@ private:
 	double egzaminas_;
 	double galutinis_;
 public:
-	stud() {
-		egzaminas_ = 0; 
-	}
-	stud(std::istream& in) {
-		stud temp = readStudent(in);
-		vard = temp.vardas();
-		pav = temp.pavarde();
-		nd_ = temp.nd();
-		egzaminas_ = temp.egzaminas();
-	};
+	stud() : egzaminas_(0) {} //default constructor
+	stud(std::istream& in); //constructor
+	stud(const stud &x2); //copy constructor
+	stud& operator=(const stud& other) {
+		this->vard = other.vard;
+		this->pav = other.pav;
+		this->nd_ = other.nd_;
+		this->egzaminas_ = other.egzaminas_;
+		this->galutinis_ = other.galutinis_;
+		return *this;
+	}; //copy assignment operator
+	~stud() = default; //default destructor
+
 	void setVardas(string name) { vard = name; }
 	void setPav(string surname) { pav = surname; }
 	void setEgz(double egzaminas) { egzaminas_ = egzaminas; }
@@ -33,9 +36,10 @@ public:
 	inline std::vector<int> nd() const { return nd_; }
 	inline double galutinis() const { return galutinis_; }
 	stud readStudent(std::istream& in);
+	void printInfo();
+	double galBalas(string GType);
 };
 
-double galBalas(double egzaminas, string GType, std::vector<int> nd);
 bool compareAlphabet(const stud& a, const stud& b);
 
 #endif

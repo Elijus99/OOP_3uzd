@@ -89,7 +89,7 @@ void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize, std:
 	for (int i = SIZE; i < (N + SIZE); i++)
 	{
 		stud x(cin);
-		x.setGal(galBalas(x.egzaminas(), GType, x.nd()));
+		x.setGal(x.galBalas(GType));
 		if (VSize < x.vardas().size()) { VSize = x.vardas().size(); }
 		if (PSize < x.pavarde().size()) { PSize = x.pavarde().size(); }
 		ls.push_back(x);
@@ -173,7 +173,7 @@ void generate(int n, string OutputFileName, string GType, std::vector<stud> &ls)
 		student.setNd(nd);
 		egzaminas = RandomNumber();
 		student.setEgz(egzaminas);
-		student.setGal(galBalas(student.egzaminas(), GType, student.nd()));
+		student.setGal(student.galBalas(GType));
 		ls.push_back(student);
 		out << std::left << setw(16) << student.vardas() << std::left << setw(17) << student.pavarde() << std::left << setw(6) << nd[0] << std::left << setw(6) << nd[1] << std::left << setw(6) << nd[2] << std::left << setw(6) << nd[3] << std::left << setw(6) << nd[4] << std::left << setw(12) << std::defaultfloat << egzaminas << std::fixed << setprecision(2) << student.galutinis() << endl;
 		student.clearNd();
@@ -222,7 +222,7 @@ void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<stud> &
 			in >> egzaminas;
 			X.setNd(nd);
 			X.setEgz(egzaminas);
-			X.setGal(galBalas(egzaminas, GType, nd));
+			X.setGal(X.galBalas(GType));
 			ls.push_back(X);
 		}
 		cout << "---Duomenys nuskaityti!---" << endl;

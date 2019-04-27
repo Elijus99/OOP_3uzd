@@ -30,5 +30,6 @@ int main()
 	cout << "Isvedimas i failus uztruko: " << std::fixed << setprecision(4) << diff4.count() << " s" << endl;
 	std::chrono::duration<double> diff = diff1 + diff2 + diff3 + diff4;
 	cout << "Viso uztruko: " << std::fixed << setprecision(4) << diff.count() << " s" << endl;
+	system("pause");
 	return 0;
 }

@@ -170,6 +170,16 @@ Vector          100000                      2.5070s          0.0334s            
 
 ## Versijų istorija (changelog)
 
+### [v1.2](https://github.com/Elijus99/OPP_3uzd/releases/tag/v1.2) - (2019-04-27)
+
+**Pridėta**
+
+- Class stud copy constructor'ius.
+- Class stud copy assignment operator'ius.
+- Class stud destructor'ius.
+- Pridėta class funkcija printInfo() spausdinanti vieno studento informaciją.
+- Funcija galBalas() perkelta į class'e.
+
 ### [v1.1](https://github.com/Elijus99/OPP_3uzd/releases/tag/v1.1) - (2019-04-10)
 
 **Koreguota**

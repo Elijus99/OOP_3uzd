@@ -170,6 +170,17 @@ Vector          100000                      2.5070s          0.0334s            
 
 ## Versijų istorija (changelog)
 
+### [v1.5](https://github.com/Elijus99/OPP_3uzd/releases/tag/v1.5) - (2019-05-01)
+
+**Pridėta**
+
+- Failai `StudentDerived.h` ir `StudentDerived.cpp`
+
+**Koreguota**
+
+- Iš class stud dalis kodo perkelta į class StudentDerived.
+- Class stud pakeista į class StudentBase.
+
 ### [v1.2](https://github.com/Elijus99/OPP_3uzd/releases/tag/v1.2) - (2019-04-27)
 
 **Pridėta**

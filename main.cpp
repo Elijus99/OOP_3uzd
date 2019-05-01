@@ -1,13 +1,14 @@
 #include "functions.h"
 #include "libraries.h"
 #include "student.h"
+#include "StudentDerived.h"
 #include <algorithm>
 
 int main()
 {
 	int VSize = 10, PSize = 10;
 	string GType{"v"};
-	std::vector<stud> ls, vargs;
+	std::vector<StudentDerived> ls, vargs;
 	std::chrono::duration<double> diff1 = {};
 	ivedimas(GType, ls, VSize, PSize, diff1);
 	auto start = std::chrono::high_resolution_clock::now();
@@ -30,5 +31,6 @@ int main()
 	cout << "Isvedimas i failus uztruko: " << std::fixed << setprecision(4) << diff4.count() << " s" << endl;
 	std::chrono::duration<double> diff = diff1 + diff2 + diff3 + diff4;
 	cout << "Viso uztruko: " << std::fixed << setprecision(4) << diff.count() << " s" << endl;
+	system("pause");
 	return 0;
 }

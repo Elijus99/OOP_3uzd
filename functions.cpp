@@ -7,7 +7,7 @@
 #include <cfloat>
 #include <fstream>
 
-void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize, std::chrono::duration<double> &diff1)
+void ivedimas(string &GType, std::vector<StudentDerived> &ls, int &VSize, int &PSize, std::chrono::duration<double> &diff1)
 {
 	bool valid_input = false;
 	int N;
@@ -88,15 +88,14 @@ void ivedimas(string &GType, std::vector<stud> &ls, int &VSize, int &PSize, std:
 	int SIZE = ls.size();
 	for (int i = SIZE; i < (N + SIZE); i++)
 	{
-		stud x(cin);
-		x.setGal(x.galBalas(GType));
+		StudentDerived x(GType, cin);
 		if (VSize < x.vardas().size()) { VSize = x.vardas().size(); }
 		if (PSize < x.pavarde().size()) { PSize = x.pavarde().size(); }
 		ls.push_back(x);
 	}
 }
 
-void isvedimas(std::vector<stud> ls, std::vector<stud> vargs, int VSize, int PSize, string GType)
+void isvedimas(std::vector<StudentDerived> ls, std::vector<StudentDerived> vargs, int VSize, int PSize, string GType)
 {
 	cout << "Vardas";
 	for (int i = 0; i < VSize; i++)
@@ -148,10 +147,10 @@ int RandomNumber()
 	return gen(mt);
 }
 
-void generate(int n, string OutputFileName, string GType, std::vector<stud> &ls)
+void generate(int n, string OutputFileName, string GType, std::vector<StudentDerived> &ls)
 {
 	double egzaminas;
-	stud student;
+	StudentDerived student;
 	std::ofstream out(OutputFileName);
 	if (GType == "V" || GType == "v") {
 		out << "Vardas          " << "Pavarde          " << "ND1   " << "ND2   " << "ND3   " << "ND4   " << "ND5   " << "Egzaminas   " << "Galutinis (Vid.)" << endl;
@@ -179,7 +178,7 @@ void generate(int n, string OutputFileName, string GType, std::vector<stud> &ls)
 		student.clearNd();
 	}
 }
-void SortToGroups(std::vector<stud> &ls, std::vector<stud> &vargs)
+void SortToGroups(std::vector<StudentDerived> &ls, std::vector<StudentDerived> &vargs)
 {
 	for (int i = 0; i < ls.size(); i++)
 	{
@@ -189,16 +188,16 @@ void SortToGroups(std::vector<stud> &ls, std::vector<stud> &vargs)
 	}
 	ls.erase(std::remove_if(
 		ls.begin(), ls.end(),
-		[](stud x) {
+		[](StudentDerived x) {
 		return x.galutinis() < 5.0;
 	}), ls.end());
 }
-void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<stud> &ls, string GType)
+void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<StudentDerived> &ls, string GType)
 {
 	if (exist(fileName)) {
 		std::ifstream in(fileName);
 		in.ignore(10000, '\n');
-		stud X;
+		StudentDerived X;
 		string vard, pav;
 		std::vector<int> nd;
 		double egzaminas, gal;
@@ -231,7 +230,7 @@ void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<stud> &
 		cout << "---Failas 'kursiokai.txt' nebuvo rastas---" << endl;
 	}
 }
-void OutputToFiles(std::vector<stud> &ls,std::vector<stud> vargs, string GType, int VSize, int PSize)
+void OutputToFiles(std::vector<StudentDerived> &ls,std::vector<StudentDerived> vargs, string GType, int VSize, int PSize)
 {
 	std::ofstream outToK("kietiakai.txt");
 	std::ofstream outToV("vargsiukai.txt");

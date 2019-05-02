@@ -4,8 +4,8 @@ Pratęskite (tuo pačiu ir patobulinkite) 2-osios užduoties Jūsų turimą prog
 
 ## Įdiegimas (Unix kompiuteryje) naudojant `Clang` kompiliatorių 
 
-- `git clone https://github.com/Elijus99/OPP_3uzd.git`
-- `cd OPP_3uzd`
+- `git clone https://github.com/Elijus99/OOP_3uzd.git`
+- `cd OOP_3uzd`
 - `make`
 - `make test`
 

@@ -1,0 +1,124 @@
+\hypertarget{functions_8cpp}{}\section{3 uzduotis/functions.cpp File Reference}
+\label{functions_8cpp}\index{3 uzduotis/functions.cpp@{3 uzduotis/functions.cpp}}
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}libraries.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}student.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cfloat$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{functions_8cpp_ab553542d0cce1ca5156b81f3d407e5ee}{ivedimas}} (string \&G\+Type, std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&ls, int \&V\+Size, int \&P\+Size, std\+::chrono\+::duration$<$ double $>$ \&diff1)
+\item 
+void \mbox{\hyperlink{functions_8cpp_a79fce1e87781067d54b2d7d6c3cfec2b}{isvedimas}} (const std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&ls, const std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&vargs, int V\+Size, int P\+Size, const string \&G\+Type)
+\item 
+bool \mbox{\hyperlink{functions_8cpp_ada10f1c4fcddbd70e2f5d396db0fdb86}{exist}} (const string \&file\+Name)
+\item 
+double \mbox{\hyperlink{functions_8cpp_a6e672efd1fdabafe6dac68416c51e958}{division}} (int a, int b)
+\item 
+int \mbox{\hyperlink{functions_8cpp_adc3041cf9f7556c2630e40b97056201b}{Random\+Number}} ()
+\item 
+void \mbox{\hyperlink{functions_8cpp_ae2137cdfbb2f83a96b66863996d98716}{generate}} (int n, const string \&Output\+File\+Name, const string \&G\+Type, std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&ls)
+\item 
+void \mbox{\hyperlink{functions_8cpp_ad0044def4a3739d8914a2170fe122cd5}{Sort\+To\+Groups}} (std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&ls, std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&vargs)
+\item 
+void \mbox{\hyperlink{functions_8cpp_ac0843012922582e7b45eb1dbef5b5e6a}{Input\+From\+Files}} (const string \&file\+Name, int \&V\+Size, int \&P\+Size, std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&ls, const string \&G\+Type)
+\item 
+void \mbox{\hyperlink{functions_8cpp_a4f7f9b85b2b531e2102f3b1208c26ae9}{Output\+To\+Files}} (std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&ls, const std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&vargs, const string \&G\+Type, int V\+Size, int P\+Size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{functions_8cpp_a6e672efd1fdabafe6dac68416c51e958}\label{functions_8cpp_a6e672efd1fdabafe6dac68416c51e958}} 
+\index{functions.cpp@{functions.cpp}!division@{division}}
+\index{division@{division}!functions.cpp@{functions.cpp}}
+\subsubsection{\texorpdfstring{division()}{division()}}
+{\footnotesize\ttfamily double division (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 135 of file functions.\+cpp.
+
+\mbox{\Hypertarget{functions_8cpp_ada10f1c4fcddbd70e2f5d396db0fdb86}\label{functions_8cpp_ada10f1c4fcddbd70e2f5d396db0fdb86}} 
+\index{functions.cpp@{functions.cpp}!exist@{exist}}
+\index{exist@{exist}!functions.cpp@{functions.cpp}}
+\subsubsection{\texorpdfstring{exist()}{exist()}}
+{\footnotesize\ttfamily bool exist (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 130 of file functions.\+cpp.
+
+\mbox{\Hypertarget{functions_8cpp_ae2137cdfbb2f83a96b66863996d98716}\label{functions_8cpp_ae2137cdfbb2f83a96b66863996d98716}} 
+\index{functions.cpp@{functions.cpp}!generate@{generate}}
+\index{generate@{generate}!functions.cpp@{functions.cpp}}
+\subsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily void generate (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{const string \&}]{Output\+File\+Name,  }\item[{const string \&}]{G\+Type,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&}]{ls }\end{DoxyParamCaption})}
+
+
+
+Definition at line 150 of file functions.\+cpp.
+
+\mbox{\Hypertarget{functions_8cpp_ac0843012922582e7b45eb1dbef5b5e6a}\label{functions_8cpp_ac0843012922582e7b45eb1dbef5b5e6a}} 
+\index{functions.cpp@{functions.cpp}!InputFromFiles@{InputFromFiles}}
+\index{InputFromFiles@{InputFromFiles}!functions.cpp@{functions.cpp}}
+\subsubsection{\texorpdfstring{InputFromFiles()}{InputFromFiles()}}
+{\footnotesize\ttfamily void Input\+From\+Files (\begin{DoxyParamCaption}\item[{const string \&}]{file\+Name,  }\item[{int \&}]{V\+Size,  }\item[{int \&}]{P\+Size,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&}]{ls,  }\item[{const string \&}]{G\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 194 of file functions.\+cpp.
+
+\mbox{\Hypertarget{functions_8cpp_a79fce1e87781067d54b2d7d6c3cfec2b}\label{functions_8cpp_a79fce1e87781067d54b2d7d6c3cfec2b}} 
+\index{functions.cpp@{functions.cpp}!isvedimas@{isvedimas}}
+\index{isvedimas@{isvedimas}!functions.cpp@{functions.cpp}}
+\subsubsection{\texorpdfstring{isvedimas()}{isvedimas()}}
+{\footnotesize\ttfamily void isvedimas (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&}]{ls,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&}]{vargs,  }\item[{int}]{V\+Size,  }\item[{int}]{P\+Size,  }\item[{const string \&}]{G\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 98 of file functions.\+cpp.
+
+\mbox{\Hypertarget{functions_8cpp_ab553542d0cce1ca5156b81f3d407e5ee}\label{functions_8cpp_ab553542d0cce1ca5156b81f3d407e5ee}} 
+\index{functions.cpp@{functions.cpp}!ivedimas@{ivedimas}}
+\index{ivedimas@{ivedimas}!functions.cpp@{functions.cpp}}
+\subsubsection{\texorpdfstring{ivedimas()}{ivedimas()}}
+{\footnotesize\ttfamily void ivedimas (\begin{DoxyParamCaption}\item[{string \&}]{G\+Type,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&}]{ls,  }\item[{int \&}]{V\+Size,  }\item[{int \&}]{P\+Size,  }\item[{std\+::chrono\+::duration$<$ double $>$ \&}]{diff1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file functions.\+cpp.
+
+\mbox{\Hypertarget{functions_8cpp_a4f7f9b85b2b531e2102f3b1208c26ae9}\label{functions_8cpp_a4f7f9b85b2b531e2102f3b1208c26ae9}} 
+\index{functions.cpp@{functions.cpp}!OutputToFiles@{OutputToFiles}}
+\index{OutputToFiles@{OutputToFiles}!functions.cpp@{functions.cpp}}
+\subsubsection{\texorpdfstring{OutputToFiles()}{OutputToFiles()}}
+{\footnotesize\ttfamily void Output\+To\+Files (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&}]{ls,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&}]{vargs,  }\item[{const string \&}]{G\+Type,  }\item[{int}]{V\+Size,  }\item[{int}]{P\+Size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 232 of file functions.\+cpp.
+
+\mbox{\Hypertarget{functions_8cpp_adc3041cf9f7556c2630e40b97056201b}\label{functions_8cpp_adc3041cf9f7556c2630e40b97056201b}} 
+\index{functions.cpp@{functions.cpp}!RandomNumber@{RandomNumber}}
+\index{RandomNumber@{RandomNumber}!functions.cpp@{functions.cpp}}
+\subsubsection{\texorpdfstring{RandomNumber()}{RandomNumber()}}
+{\footnotesize\ttfamily int Random\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 142 of file functions.\+cpp.
+
+\mbox{\Hypertarget{functions_8cpp_ad0044def4a3739d8914a2170fe122cd5}\label{functions_8cpp_ad0044def4a3739d8914a2170fe122cd5}} 
+\index{functions.cpp@{functions.cpp}!SortToGroups@{SortToGroups}}
+\index{SortToGroups@{SortToGroups}!functions.cpp@{functions.cpp}}
+\subsubsection{\texorpdfstring{SortToGroups()}{SortToGroups()}}
+{\footnotesize\ttfamily void Sort\+To\+Groups (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&}]{ls,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_student_derived}{Student\+Derived}} $>$ \&}]{vargs }\end{DoxyParamCaption})}
+
+
+
+Definition at line 180 of file functions.\+cpp.
+

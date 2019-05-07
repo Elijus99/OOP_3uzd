@@ -1,5 +1,9 @@
 \hypertarget{class_student_base}{}\section{Student\+Base Class Reference}
 \label{class_student_base}\index{StudentBase@{StudentBase}}
+
+
+{\ttfamily \#include $<$student.\+h$>$}
+
 Inheritance diagram for Student\+Base\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,66 +13,255 @@ Inheritance diagram for Student\+Base\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_student_base_aa03be154c85a6ed0a4b946a8af9be7f7}\label{class_student_base_aa03be154c85a6ed0a4b946a8af9be7f7}} 
-{\bfseries Student\+Base} (const \mbox{\hyperlink{class_student_base}{Student\+Base}} \&x2)
+\mbox{\hyperlink{class_student_base_aa03be154c85a6ed0a4b946a8af9be7f7}{Student\+Base}} (const \mbox{\hyperlink{class_student_base}{Student\+Base}} \&x2)
 \item 
-\mbox{\Hypertarget{class_student_base_a33492cade3cb6912b66b0aaac26ca0bc}\label{class_student_base_a33492cade3cb6912b66b0aaac26ca0bc}} 
-\mbox{\hyperlink{class_student_base}{Student\+Base}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_student_base}{Student\+Base}} \&other)
+\mbox{\hyperlink{class_student_base}{Student\+Base}} \& \mbox{\hyperlink{class_student_base_a33492cade3cb6912b66b0aaac26ca0bc}{operator=}} (const \mbox{\hyperlink{class_student_base}{Student\+Base}} \&other)
 \item 
-\mbox{\Hypertarget{class_student_base_ad3d2ec87d8481a846d06fbdaae88aec1}\label{class_student_base_ad3d2ec87d8481a846d06fbdaae88aec1}} 
-void {\bfseries set\+Vardas} (string name)
+\mbox{\hyperlink{class_student_base_ad909509549288293e4af9ed332c5b156}{$\sim$\+Student\+Base}} ()=default
 \item 
-\mbox{\Hypertarget{class_student_base_a640675f1b05262dd1acaa798c2259675}\label{class_student_base_a640675f1b05262dd1acaa798c2259675}} 
-void {\bfseries set\+Pav} (string surname)
+void \mbox{\hyperlink{class_student_base_ad3d2ec87d8481a846d06fbdaae88aec1}{set\+Vardas}} (string name)
 \item 
-\mbox{\Hypertarget{class_student_base_a62a8e545c6f0a53d1af6508856bbf670}\label{class_student_base_a62a8e545c6f0a53d1af6508856bbf670}} 
-void {\bfseries set\+Egz} (double egzaminas)
+void \mbox{\hyperlink{class_student_base_a640675f1b05262dd1acaa798c2259675}{set\+Pav}} (string surname)
 \item 
-\mbox{\Hypertarget{class_student_base_abca77bf7b90c9c6ad94975cbbb34979d}\label{class_student_base_abca77bf7b90c9c6ad94975cbbb34979d}} 
-void {\bfseries set\+Nd} (vector$<$ int $>$ nd)
+void \mbox{\hyperlink{class_student_base_a62a8e545c6f0a53d1af6508856bbf670}{set\+Egz}} (double \mbox{\hyperlink{class_student_base_a250eda1d2180e7d61ca3f3930417cf06}{egzaminas}})
 \item 
-\mbox{\Hypertarget{class_student_base_a3776b744979f4f34968ef407503f44a8}\label{class_student_base_a3776b744979f4f34968ef407503f44a8}} 
-void {\bfseries clear\+Nd} ()
+void \mbox{\hyperlink{class_student_base_abca77bf7b90c9c6ad94975cbbb34979d}{set\+Nd}} (vector$<$ int $>$ \mbox{\hyperlink{class_student_base_aff680a22b1f9240273612335b94f58c4}{nd}})
 \item 
-\mbox{\Hypertarget{class_student_base_a6fe791399496f3b4b0c9d910472b2232}\label{class_student_base_a6fe791399496f3b4b0c9d910472b2232}} 
-string {\bfseries vardas} () const
+void \mbox{\hyperlink{class_student_base_a3776b744979f4f34968ef407503f44a8}{clear\+Nd}} ()
 \item 
-\mbox{\Hypertarget{class_student_base_adc52417e044a31212359ea106fe81236}\label{class_student_base_adc52417e044a31212359ea106fe81236}} 
-string {\bfseries pavarde} () const
+string \mbox{\hyperlink{class_student_base_a6fe791399496f3b4b0c9d910472b2232}{vardas}} () const
 \item 
-\mbox{\Hypertarget{class_student_base_a250eda1d2180e7d61ca3f3930417cf06}\label{class_student_base_a250eda1d2180e7d61ca3f3930417cf06}} 
-double {\bfseries egzaminas} () const
+string \mbox{\hyperlink{class_student_base_adc52417e044a31212359ea106fe81236}{pavarde}} () const
 \item 
-\mbox{\Hypertarget{class_student_base_aff680a22b1f9240273612335b94f58c4}\label{class_student_base_aff680a22b1f9240273612335b94f58c4}} 
-std\+::vector$<$ int $>$ {\bfseries nd} () const
+double \mbox{\hyperlink{class_student_base_a250eda1d2180e7d61ca3f3930417cf06}{egzaminas}} () const
 \item 
-\mbox{\Hypertarget{class_student_base_a697cb5bf22e2e43772c9b52a32d4b7f2}\label{class_student_base_a697cb5bf22e2e43772c9b52a32d4b7f2}} 
-\mbox{\hyperlink{class_student_base}{Student\+Base}} {\bfseries read\+Student} (std\+::istream \&in)
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_student_base_aff680a22b1f9240273612335b94f58c4}{nd}} () const
+\item 
+\mbox{\hyperlink{class_student_base}{Student\+Base}} \mbox{\hyperlink{class_student_base_a697cb5bf22e2e43772c9b52a32d4b7f2}{read\+Student}} (std\+::istream \&in)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_student_base_ac662cd3032afaab8f9b59d45fff019a4}\label{class_student_base_ac662cd3032afaab8f9b59d45fff019a4}} 
-{\bfseries Student\+Base} (std\+::istream \&in)
+\mbox{\hyperlink{class_student_base_a527154f1346165235b615dadaadec9ef}{Student\+Base}} ()
+\item 
+\mbox{\hyperlink{class_student_base_ac662cd3032afaab8f9b59d45fff019a4}{Student\+Base}} (std\+::istream \&in)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_student_base_a43bacd79e942bdf9d2fb984d08edf454}\label{class_student_base_a43bacd79e942bdf9d2fb984d08edf454}} 
-string {\bfseries vard}
+string \mbox{\hyperlink{class_student_base_a43bacd79e942bdf9d2fb984d08edf454}{vard}}
 \item 
-\mbox{\Hypertarget{class_student_base_abdccea3079f2c5df94f35525d4c5c75d}\label{class_student_base_abdccea3079f2c5df94f35525d4c5c75d}} 
-string {\bfseries pav}
+string \mbox{\hyperlink{class_student_base_abdccea3079f2c5df94f35525d4c5c75d}{pav}}
 \item 
-\mbox{\Hypertarget{class_student_base_ab55fd8db43909de908c66ed7f3bdd4e6}\label{class_student_base_ab55fd8db43909de908c66ed7f3bdd4e6}} 
-std\+::vector$<$ int $>$ {\bfseries nd\+\_\+}
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_student_base_ab55fd8db43909de908c66ed7f3bdd4e6}{nd\+\_\+}}
 \item 
-\mbox{\Hypertarget{class_student_base_a570c3b4ff3d867280b15cf4d680a6cf7}\label{class_student_base_a570c3b4ff3d867280b15cf4d680a6cf7}} 
-double {\bfseries egzaminas\+\_\+}
+double \mbox{\hyperlink{class_student_base_a570c3b4ff3d867280b15cf4d680a6cf7}{egzaminas\+\_\+}}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file student.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_student_base_a527154f1346165235b615dadaadec9ef}\label{class_student_base_a527154f1346165235b615dadaadec9ef}} 
+\index{StudentBase@{StudentBase}!StudentBase@{StudentBase}}
+\index{StudentBase@{StudentBase}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{StudentBase()}{StudentBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Student\+Base\+::\+Student\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 12 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_ac662cd3032afaab8f9b59d45fff019a4}\label{class_student_base_ac662cd3032afaab8f9b59d45fff019a4}} 
+\index{StudentBase@{StudentBase}!StudentBase@{StudentBase}}
+\index{StudentBase@{StudentBase}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{StudentBase()}{StudentBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Student\+Base\+::\+Student\+Base (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 6 of file student.\+cpp.
+
+\mbox{\Hypertarget{class_student_base_aa03be154c85a6ed0a4b946a8af9be7f7}\label{class_student_base_aa03be154c85a6ed0a4b946a8af9be7f7}} 
+\index{StudentBase@{StudentBase}!StudentBase@{StudentBase}}
+\index{StudentBase@{StudentBase}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{StudentBase()}{StudentBase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Student\+Base\+::\+Student\+Base (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student_base}{Student\+Base}} \&}]{x2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file student.\+cpp.
+
+\mbox{\Hypertarget{class_student_base_ad909509549288293e4af9ed332c5b156}\label{class_student_base_ad909509549288293e4af9ed332c5b156}} 
+\index{StudentBase@{StudentBase}!````~StudentBase@{$\sim$StudentBase}}
+\index{````~StudentBase@{$\sim$StudentBase}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{$\sim$StudentBase()}{~StudentBase()}}
+{\footnotesize\ttfamily Student\+Base\+::$\sim$\+Student\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_student_base_a3776b744979f4f34968ef407503f44a8}\label{class_student_base_a3776b744979f4f34968ef407503f44a8}} 
+\index{StudentBase@{StudentBase}!clearNd@{clearNd}}
+\index{clearNd@{clearNd}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{clearNd()}{clearNd()}}
+{\footnotesize\ttfamily void Student\+Base\+::clear\+Nd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 29 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_a250eda1d2180e7d61ca3f3930417cf06}\label{class_student_base_a250eda1d2180e7d61ca3f3930417cf06}} 
+\index{StudentBase@{StudentBase}!egzaminas@{egzaminas}}
+\index{egzaminas@{egzaminas}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{egzaminas()}{egzaminas()}}
+{\footnotesize\ttfamily double Student\+Base\+::egzaminas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 32 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_aff680a22b1f9240273612335b94f58c4}\label{class_student_base_aff680a22b1f9240273612335b94f58c4}} 
+\index{StudentBase@{StudentBase}!nd@{nd}}
+\index{nd@{nd}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{nd()}{nd()}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Student\+Base\+::nd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 33 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_a33492cade3cb6912b66b0aaac26ca0bc}\label{class_student_base_a33492cade3cb6912b66b0aaac26ca0bc}} 
+\index{StudentBase@{StudentBase}!operator=@{operator=}}
+\index{operator=@{operator=}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_student_base}{Student\+Base}}\& Student\+Base\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student_base}{Student\+Base}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 16 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_adc52417e044a31212359ea106fe81236}\label{class_student_base_adc52417e044a31212359ea106fe81236}} 
+\index{StudentBase@{StudentBase}!pavarde@{pavarde}}
+\index{pavarde@{pavarde}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{pavarde()}{pavarde()}}
+{\footnotesize\ttfamily string Student\+Base\+::pavarde (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 31 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_a697cb5bf22e2e43772c9b52a32d4b7f2}\label{class_student_base_a697cb5bf22e2e43772c9b52a32d4b7f2}} 
+\index{StudentBase@{StudentBase}!readStudent@{readStudent}}
+\index{readStudent@{readStudent}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{readStudent()}{readStudent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_student_base}{Student\+Base}} Student\+Base\+::read\+Student (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file student.\+cpp.
+
+\mbox{\Hypertarget{class_student_base_a62a8e545c6f0a53d1af6508856bbf670}\label{class_student_base_a62a8e545c6f0a53d1af6508856bbf670}} 
+\index{StudentBase@{StudentBase}!setEgz@{setEgz}}
+\index{setEgz@{setEgz}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{setEgz()}{setEgz()}}
+{\footnotesize\ttfamily void Student\+Base\+::set\+Egz (\begin{DoxyParamCaption}\item[{double}]{egzaminas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 27 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_abca77bf7b90c9c6ad94975cbbb34979d}\label{class_student_base_abca77bf7b90c9c6ad94975cbbb34979d}} 
+\index{StudentBase@{StudentBase}!setNd@{setNd}}
+\index{setNd@{setNd}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{setNd()}{setNd()}}
+{\footnotesize\ttfamily void Student\+Base\+::set\+Nd (\begin{DoxyParamCaption}\item[{vector$<$ int $>$}]{nd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 28 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_a640675f1b05262dd1acaa798c2259675}\label{class_student_base_a640675f1b05262dd1acaa798c2259675}} 
+\index{StudentBase@{StudentBase}!setPav@{setPav}}
+\index{setPav@{setPav}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{setPav()}{setPav()}}
+{\footnotesize\ttfamily void Student\+Base\+::set\+Pav (\begin{DoxyParamCaption}\item[{string}]{surname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 26 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_ad3d2ec87d8481a846d06fbdaae88aec1}\label{class_student_base_ad3d2ec87d8481a846d06fbdaae88aec1}} 
+\index{StudentBase@{StudentBase}!setVardas@{setVardas}}
+\index{setVardas@{setVardas}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{setVardas()}{setVardas()}}
+{\footnotesize\ttfamily void Student\+Base\+::set\+Vardas (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 25 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_a6fe791399496f3b4b0c9d910472b2232}\label{class_student_base_a6fe791399496f3b4b0c9d910472b2232}} 
+\index{StudentBase@{StudentBase}!vardas@{vardas}}
+\index{vardas@{vardas}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{vardas()}{vardas()}}
+{\footnotesize\ttfamily string Student\+Base\+::vardas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 30 of file student.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_student_base_a570c3b4ff3d867280b15cf4d680a6cf7}\label{class_student_base_a570c3b4ff3d867280b15cf4d680a6cf7}} 
+\index{StudentBase@{StudentBase}!egzaminas\_@{egzaminas\_}}
+\index{egzaminas\_@{egzaminas\_}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{egzaminas\_}{egzaminas\_}}
+{\footnotesize\ttfamily double Student\+Base\+::egzaminas\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 11 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_ab55fd8db43909de908c66ed7f3bdd4e6}\label{class_student_base_ab55fd8db43909de908c66ed7f3bdd4e6}} 
+\index{StudentBase@{StudentBase}!nd\_@{nd\_}}
+\index{nd\_@{nd\_}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{nd\_}{nd\_}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Student\+Base\+::nd\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 10 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_abdccea3079f2c5df94f35525d4c5c75d}\label{class_student_base_abdccea3079f2c5df94f35525d4c5c75d}} 
+\index{StudentBase@{StudentBase}!pav@{pav}}
+\index{pav@{pav}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{pav}{pav}}
+{\footnotesize\ttfamily string Student\+Base\+::pav\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 9 of file student.\+h.
+
+\mbox{\Hypertarget{class_student_base_a43bacd79e942bdf9d2fb984d08edf454}\label{class_student_base_a43bacd79e942bdf9d2fb984d08edf454}} 
+\index{StudentBase@{StudentBase}!vard@{vard}}
+\index{vard@{vard}!StudentBase@{StudentBase}}
+\subsubsection{\texorpdfstring{vard}{vard}}
+{\footnotesize\ttfamily string Student\+Base\+::vard\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 8 of file student.\+h.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Elijus/\+Desktop/\+Objektinis/3 uzduotis/2 oji uzduotis vector/student.\+h\item 
-C\+:/\+Users/\+Elijus/\+Desktop/\+Objektinis/3 uzduotis/2 oji uzduotis vector/student.\+cpp\end{DoxyCompactItemize}
+3 uzduotis/\mbox{\hyperlink{student_8h}{student.\+h}}\item 
+3 uzduotis/\mbox{\hyperlink{student_8cpp}{student.\+cpp}}\end{DoxyCompactItemize}

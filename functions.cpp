@@ -50,9 +50,9 @@ void ivedimas(string &GType, std::vector<StudentDerived> &ls, int &VSize, int &P
 		} while (!valid_input);
 		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		string name = "StudentList" + std::to_string(chooseN) + ".txt";
-		auto start = std::chrono::high_resolution_clock::now();
+		auto const start = std::chrono::high_resolution_clock::now();
 		generate(chooseN, name, GType, ls);
-		auto end = std::chrono::high_resolution_clock::now();
+		auto const end = std::chrono::high_resolution_clock::now();
 		diff1 = end - start;
 	}
 
@@ -95,7 +95,7 @@ void ivedimas(string &GType, std::vector<StudentDerived> &ls, int &VSize, int &P
 	}
 }
 
-void isvedimas(std::vector<StudentDerived> ls, std::vector<StudentDerived> vargs, int VSize, int PSize, string GType)
+void isvedimas(const std::vector<StudentDerived>& ls, const std::vector<StudentDerived>& vargs, int VSize, int PSize, const string &GType)
 {
 	cout << "Vardas";
 	for (int i = 0; i < VSize; i++)
@@ -118,16 +118,16 @@ void isvedimas(std::vector<StudentDerived> ls, std::vector<StudentDerived> vargs
 		cout << "-";
 	}
 	cout << endl;
-	for (int i = 0; i < ls.size(); i++)
-	{
-		cout << std::left << setw(VSize + 6) << ls[i].vardas()<< setw(PSize + 7) << ls[i].pavarde() << std::fixed << setprecision(2) << ls[i].galutinis() << endl;
+	for (auto& l : ls)
+    {
+		cout << std::left << setw(VSize + 6) << l.vardas()<< setw(PSize + 7) << l.pavarde() << std::fixed << setprecision(2) << l.galutinis() << endl;
 	}
-	for (int i = 0; i < vargs.size(); i++)
-	{
-		cout << std::left << setw(VSize + 6) << vargs[i].vardas() << setw(PSize + 7) << vargs[i].pavarde() << std::fixed << setprecision(2) << vargs[i].galutinis() << endl;
+	for (auto& varg : vargs)
+    {
+		cout << std::left << setw(VSize + 6) << varg.vardas() << setw(PSize + 7) << varg.pavarde() << std::fixed << setprecision(2) << varg.galutinis() << endl;
 	}
 }
-bool exist(string fileName)
+bool exist(const string &fileName)
 {
 	std::ifstream infile(fileName);
 	return infile.good();
@@ -137,7 +137,7 @@ double division(int a, int b)
 	if (b == 0) {
 		return 0;
 	}
-	return ((double)a / b);
+	return (double(a) / b);
 }
 int RandomNumber()
 {
@@ -147,10 +147,9 @@ int RandomNumber()
 	return gen(mt);
 }
 
-void generate(int n, string OutputFileName, string GType, std::vector<StudentDerived> &ls)
+void generate(int n, const string &OutputFileName, const string &GType, std::vector<StudentDerived> &ls)
 {
-	double egzaminas;
-	StudentDerived student;
+    StudentDerived student;
 	std::ofstream out(OutputFileName);
 	if (GType == "V" || GType == "v") {
 		out << "Vardas          " << "Pavarde          " << "ND1   " << "ND2   " << "ND3   " << "ND4   " << "ND5   " << "Egzaminas   " << "Galutinis (Vid.)" << endl;
@@ -170,7 +169,7 @@ void generate(int n, string OutputFileName, string GType, std::vector<StudentDer
 			nd.push_back(RandomNumber());
 		}
 		student.setNd(nd);
-		egzaminas = RandomNumber();
+		double egzaminas = RandomNumber();
 		student.setEgz(egzaminas);
 		student.setGal(student.galBalas(GType));
 		ls.push_back(student);
@@ -180,24 +179,24 @@ void generate(int n, string OutputFileName, string GType, std::vector<StudentDer
 }
 void SortToGroups(std::vector<StudentDerived> &ls, std::vector<StudentDerived> &vargs)
 {
-	for (int i = 0; i < ls.size(); i++)
-	{
-		if (ls[i].galutinis() < 5.0) {
-			vargs.push_back(ls[i]);
+	for (auto& l : ls)
+    {
+		if (l.galutinis() < 5.0) {
+			vargs.push_back(l);
 		}
 	}
 	ls.erase(std::remove_if(
 		ls.begin(), ls.end(),
-		[](StudentDerived x) {
+		[](const StudentDerived& x) {
 		return x.galutinis() < 5.0;
 	}), ls.end());
 }
-void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<StudentDerived> &ls, string GType)
+void InputFromFiles(const string &fileName, int &VSize, int &PSize, std::vector<StudentDerived> &ls, const string &GType)
 {
 	if (exist(fileName)) {
 		std::ifstream in(fileName);
 		in.ignore(10000, '\n');
-		StudentDerived X;
+		StudentDerived x;
 		string vard, pav;
 		std::vector<int> nd;
 		double egzaminas, gal;
@@ -210,8 +209,8 @@ void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<Student
 			if (PSize < pav.size()) {
 				PSize = pav.size();
 			}
-			X.setVardas(vard);
-			X.setPav(pav);
+			x.setVardas(vard);
+			x.setPav(pav);
 			nd.clear();
 			for (int i = 0; i < n; i++)
 			{
@@ -219,10 +218,10 @@ void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<Student
 				nd.push_back(temp);
 			}
 			in >> egzaminas;
-			X.setNd(nd);
-			X.setEgz(egzaminas);
-			X.setGal(X.galBalas(GType));
-			ls.push_back(X);
+			x.setNd(nd);
+			x.setEgz(egzaminas);
+			x.setGal(x.galBalas(GType));
+			ls.push_back(x);
 		}
 		cout << "---Duomenys nuskaityti!---" << endl;
 	}
@@ -230,7 +229,7 @@ void InputFromFiles(string fileName, int &VSize, int &PSize, std::vector<Student
 		cout << "---Failas 'kursiokai.txt' nebuvo rastas---" << endl;
 	}
 }
-void OutputToFiles(std::vector<StudentDerived> &ls,std::vector<StudentDerived> vargs, string GType, int VSize, int PSize)
+void OutputToFiles(std::vector<StudentDerived> &ls, const std::vector<StudentDerived>& vargs, const string& GType, int VSize, int PSize)
 {
 	std::ofstream outToK("kietiakai.txt");
 	std::ofstream outToV("vargsiukai.txt");
@@ -263,12 +262,14 @@ void OutputToFiles(std::vector<StudentDerived> &ls,std::vector<StudentDerived> v
 	}
 	outToK << endl;
 	outToV << endl;
-	for (int i = 0; i < vargs.size(); i++)
-	{
-		outToV << std::left << setw(VSize + 6) << vargs[i].vardas() << setw(PSize + 7) << vargs[i].pavarde() << std::fixed << setprecision(2) << vargs[i].galutinis() << endl;
+	for (auto& varg : vargs)
+    {
+		outToV << std::left << setw(VSize + 6) << varg.vardas() << setw(PSize + 7) << varg.pavarde() << std::fixed << setprecision(2) <<
+            varg.galutinis() << endl;
 	}
-	for (int i = 0; i < ls.size(); i++)
-	{
-		outToK << std::left << setw(VSize + 6) << ls[i].vardas() << setw(PSize + 7) << ls[i].pavarde() << std::fixed << setprecision(2) << ls[i].galutinis() << endl;
+	for (auto& l : ls)
+    {
+		outToK << std::left << setw(VSize + 6) << l.vardas() << setw(PSize + 7) << l.pavarde() << std::fixed << setprecision(2) <<
+            l.galutinis() << endl;
 	}
 }

@@ -6,7 +6,7 @@ private:
 	double galutinis_;
 public:
 	StudentDerived() : galutinis_(0) {}
-	StudentDerived(string GType, std::istream& in);
+	StudentDerived(const string &GType, std::istream& in);
 	StudentDerived(const StudentDerived &x2);
 	StudentDerived& operator=(const StudentDerived& other) {
 		this->vard = other.vard;
@@ -20,6 +20,6 @@ public:
 	void setGal(double gal) { galutinis_ = gal; }
 	inline double galutinis() const { return galutinis_; }
 	void printInfo();
-	double galBalas(string GType);
+	double galBalas(const string& GType);
 };
 

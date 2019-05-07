@@ -170,6 +170,13 @@ Vector          100000                      2.5070s          0.0334s            
 
 ## Versijų istorija (changelog)
 
+### [v2.0](https://github.com/Elijus99/OPP_3uzd/releases/tag/v2.0) - (2019-05-07)
+
+**Pridėta**
+
+- Doxygen dokumentacija
+- Unit testai
+
 ### [v1.5](https://github.com/Elijus99/OPP_3uzd/releases/tag/v1.5) - (2019-05-01)
 
 **Pridėta**
